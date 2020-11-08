@@ -1,0 +1,104 @@
+<html>
+
+<head>
+    <script src="components.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Standard Componnets-->
+    <div id="grandparentDiv1" style="border: 1px solid;width: 500px; height: 500px;background-color: aquamarine;">
+        <div style="background-color: blue;width: 100px;height: 100px;" id="parentDiv1">
+
+            <input type="button" style="font-size: large;" id="btn1" value="Click to Attach Handler to this div">
+            <div style="margin-top: 70px;"></div>
+            <input type="text" class="text" size="25" style="height: 25px;" id="unslottedText"></input>
+
+        </div>
+
+    </div>
+    <br /><br />
+    <!-- END -->
+
+    <!-- Custom Components-->
+    <div id="grandparentDiv2" style="border: 1px solid;width: 500px;">
+        <div style="background-color: pink;width: 500px;height: 500px;" id="parentDiv2">
+
+            <my-div>
+
+                <my-button>
+
+                    <button slot="mybutton" class="btnn" id="slottedButton">Button From
+                        Template</button>
+
+                </my-button>
+
+            </my-div>
+
+            <br /><br />
+
+            <my-div>
+
+                <my-button>
+
+                    <label slot="label">Label for Input : </label>
+                    <input type="text" slot="mybutton" class="text" size="25" style="height: 25px;"
+                        id="slottedText"></input>
+
+                </my-button>
+
+            </my-div>
+
+        </div>
+    </div>
+
+    <br />
+
+    <word-count-meter id="wcMeter" data-word-count="0"></word-count-meter>
+    <!-- END -->
+
+    <!-- TEMPLATES-->
+    <template id="buttonComp">
+
+        <div id="buttonDiv" style="background-color: yellowgreen;">
+            <slot name="label"></slot>
+            <slot name="mybutton">Button Not Rendered</slot>
+        </div>
+
+    </template>
+
+    <template id="para">
+        <style>
+            p {
+                color: black;
+            }
+
+            .btnn {
+                font-size: large;
+            }
+
+            label {
+                color: maroon;
+            }
+        </style>
+        <p>Some Random Text</p>
+    </template>
+
+    <template id="simpleTemplate">
+
+        <p id="simple">Simple Template Text</p>
+    </template>
+
+    <template id="wc">
+        <style>
+            p {
+                font-size: large;
+            }
+        </style>
+        <p>Count : 0</p>
+    </template>
+    <!-- END -->
+
+</body>
+
+</html>
